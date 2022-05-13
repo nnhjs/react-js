@@ -1,23 +1,53 @@
-'use strict';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-class LikeButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { liked: false };
+function Clock() {
+  const [date, setDate] = React.useState(new Date());
+
+  function tick() {
+    setDate(new Date());
   }
 
-  render() {
-    if (this.state.liked) {
-      return 'You liked this.';
-    }
+  // setInterval(tick, 1000)
 
-    return (
-      <button onClick={() => this.setState({ liked: true }) }>
-        Like2
-      </button>
-    );
-  }
+  return (
+    <div>
+      <h1>Hello, world</h1>
+      <h2>It is {date.toLocaleTimeString()}.</h2>
+    </div>
+  )
 }
 
-let domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(<LikeButton />, domContainer);
+function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log('You clicked submit.')
+  }
+
+  return (
+    <form onSubmit={handleSubmit} >
+      <button type="submit" >Submit</button>
+    </form>
+  )
+}
+
+function Toggle() {
+  const [isToggleOn, setIsToggleOn] = React.useState('OFF')
+  function handleClick() {
+    setIsToggleOn(!isToggleOn)
+  }
+  return (
+    <button onClick={handleClick} >
+      {isToggleOn ? 'ON' : 'OFF'}
+    </button>
+  )
+}
+
+function App() {
+  return (
+    <div>
+      <Toggle />
+    </div>
+  )
+}
+
+root.render(<App />)
