@@ -1,9 +1,13 @@
-// import("./math").then(math => {
-//   console.log(math.add(16, 26));
-// });
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
-function add(a, b) {
-  return a + b;
-}
+// function App() {
+//   return (
+//     <div>
+//       Hello world
+//     </div>
+//   )
+// }
 
-console.log(add(16, 26)); // 42
+const element = React.createElement('div', {}, 'Hello world')
+
+root.render(element)
