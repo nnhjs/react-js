@@ -8,5 +8,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": "> 0.25%, not dead",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-transform-arrow-functions": "^7.16.7",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
 }
